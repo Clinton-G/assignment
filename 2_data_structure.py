@@ -1,29 +1,23 @@
-#   Task 2:
-
-# Add functionality to insert new books into library.
-# Ensure that adding a duplicate book is handled appropriately.
-
-#   [] list
-#   () tuple
-#   [()] tuple IN a list
+def add_book(library, title, author):
+    if (title, author) not in library:
+        library.append((title, author))
+        print(title, "by", author, "has been added")
+    else:
+        print(title, "by", author, "already exists")
 
 library = [("1984", "George Orwell"), ("Brave New World", "Aldous Huxley")]
 
+print("")
+add_book(library, "1984", "George Orwell")
+print("")
+add_book(library, "Star Wars", "George Lucas")
+print("")
+add_book(library, "Lavish Closet Living", "Harry Potter")
+print("")
 
-
-
-
-# list.append('item')
-
-library = list(library)                 #   conv. tuple to a list so it can be added too
-library.append('Add Book Title')        #   adding/inserting new book
-library.append('Add Book Author')       #   adding/inserting new book
-library = tuple(library)                #   conv back to a tuple
-print(library)                          #   printing end result 
-
-
-
-
+print("----------------------------------------")
+print("")
+print(library)
 
 
 
